@@ -7,6 +7,11 @@ public class ConfigPrefabs : MonoBehaviour{
 }
 
 public static class CellConfig {
-	public static string[] CellMaterials;
+
+	//cell
+	public static Material[] CellMaterials;
 	public static GameObject CellPrefab;
+
+	//field
+	public static int FieldWidth = 9;
 }
