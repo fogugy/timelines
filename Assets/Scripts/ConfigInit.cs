@@ -2,41 +2,49 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ConfigInit : MonoBehaviour {
+public class ConfigInit : MonoBehaviour
+{
+	public static System.Action OnInitDone { get; set; }
+
+	public int FieldWidth = 9;
+	public string FieldPrefabName = "playfield";
 
 	public int CellStateCount = 4;
 	public List<string> CellMaterialsNames = new List<string> ();
-	public string CellPrefabName = "";
+	public string CellPrefabName = "cell";
 
-	void Start()
+	void Start ()
 	{
-		InitConfigPrefabs();
+		Init ();
 	}
 
-	//private
-	void InitConfigPrefabs() 
+	public void Init ()
 	{
-		InitPrefabs();
-		InitCellMaterials();
+		InitCell ();
+		InitField ();
+
+		OnInitDone ();
 	}
 
-	void InitPrefabs()
+	void InitField ()
+	{
+		FieldConfig.FieldWidth = FieldWidth;
+		FieldConfig.Prefab = GetResource<GameObject> (FieldPrefabName);
+	}
+
+	void InitCell ()
 	{
 		CellConfig.Prefab = GetResource<GameObject> (CellPrefabName);
-	}
-
-	void InitCellMaterials() 
-	{
 		foreach (var matName in CellMaterialsNames) {
 			CellConfig.Materials.Add (GetResource<Material> (matName));
 		}
 	}
 
-	T GetResource<T>(string prefabName) where T : class
+	T GetResource<T> (string prefabName) where T : class
 	{
 		if (prefabName.Length == 0) {
 			throw new UnityException ("Prefab name in config is empty");
 		}
-		return (Resources.Load(prefabName, typeof(T)) as T);
+		return (Resources.Load (prefabName, typeof(T)) as T);
 	}
 }
