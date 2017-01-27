@@ -8,7 +8,7 @@ public class ConfigInit : MonoBehaviour {
 	public List<string> CellMaterialsNames = new List<string> ();
 	public string CellPrefabName = "";
 
-	public ConfigInit()
+	void Start()
 	{
 		InitConfigPrefabs();
 	}
