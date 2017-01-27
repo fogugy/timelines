@@ -6,11 +6,10 @@ public class MainSceneController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		ConfigInit.OnInitDone += CreatePlayField;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
+	void CreatePlayField(){
+		Instantiate (FieldConfig.Prefab);
 	}
 }
