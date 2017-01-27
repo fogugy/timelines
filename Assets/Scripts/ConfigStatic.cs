@@ -2,15 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ConfigPrefabs : MonoBehaviour{
-	public static string Yo;
-}
-
 public static class CellConfig {
 
 	//cell
-	public static Material[] CellMaterials;
-	public static GameObject CellPrefab;
+	public static List<Material> Materials = new List<Material>();
+	public static GameObject Prefab;
 
 	//field
 	public static int FieldWidth = 9;
