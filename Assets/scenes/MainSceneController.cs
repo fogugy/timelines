@@ -10,6 +10,7 @@ public class MainSceneController : MonoBehaviour {
 	}
 	
 	void CreatePlayField(){
-		Instantiate (FieldConfig.Prefab);
+		var field = Instantiate (FieldConfig.Prefab);
+		field.transform.parent = gameObject.transform;
 	}
 }

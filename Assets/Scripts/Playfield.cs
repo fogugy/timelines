@@ -26,10 +26,11 @@ public class Playfield : MonoBehaviour
         {
             for (short j = 0; j < FieldWidth; j++)
             {
-                cells[i, j] = Instantiate(CellConfig.Prefab);
-                cells[i, j].transform.position = initialPos + new Vector3(1.1f * i, 0f, 1.1f * j);
+                var cellGO = cells[i, j] = Instantiate(CellConfig.Prefab);
+				cellGO.transform.position = initialPos + new Vector3(1.1f * i, 0f, 1.1f * j);
+				cellGO.transform.parent = gameObject.transform;
 
-                Cell cell = cells[i, j].GetComponent<Cell>();
+				Cell cell = cellGO.GetComponent<Cell>();
                 CellState state;
                 
                 switch (rnd.Next(0, 5))
