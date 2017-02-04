@@ -1,16 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
-public class Logger : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
+public static class Logger
+{
+	static FileStream fs = new FileStream (Application.dataPath, FileMode.Append);
+	static StreamWriter sw = new StreamWriter (fs);
 	
-	// Update is called once per frame
-	void Update () {
-		
+	public static void Log (string msg, bool isError)
+	{
+		if (isError) {
+			msg += isError;
+		}
+
+		using (fs)
+		using (sw) {
+			sw.WriteLine (msg);
+		}
 	}
 }
