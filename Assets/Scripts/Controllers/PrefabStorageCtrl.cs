@@ -12,15 +12,13 @@ public static class PrefabStorageCtrl
 
 	public static void Load ()
 	{
-		
 	}
 
 	public static void Save ()
 	{
-		
 	}
 
-	private static void LoadPrefab<T>(ref T prefab) where T : PrefabBase
+	private static void LoadPrefab<T> (ref T prefab) where T : PrefabBase, new()
 	{
 		var path = Path.Combine (Folder, prefab.XmlPath);
 		var serializer = new XmlSerializer (typeof(T));

@@ -16,7 +16,5 @@ public class FieldPrefabs : PrefabBase
 
 	public string CellName { get; set; }
 
-	[XmlArray ("PlayersNames")]
-	[XmlArrayItem ("Player")]
 	public List<string> PlayersNames { get; set; }
 }
