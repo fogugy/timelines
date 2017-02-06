@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Collection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <List>
+    <ListItem name="name_1">
+      <Number>1</Number>
+    </ListItem>
+    <ListItem name="name_2">
+      <Number>2</Number>
+    </ListItem>
+    <ListItem name="name_3">
+      <Number>3</Number>
+    </ListItem>
+    <ListItem name="name_4">
+      <Number>4</Number>
+    </ListItem>
+    <ListItem name="name_5">
+      <Number>5</Number>
+    </ListItem>
+    <ListItem name="name_6">
+      <Number>6</Number>
+    </ListItem>
+    <ListItem name="name_7">
+      <Number>7</Number>
+    </ListItem>
+    <ListItem name="name_8">
+      <Number>8</Number>
+    </ListItem>
+    <ListItem name="name_9">
+      <Number>9</Number>
+    </ListItem>
+    <ListItem name="name_10">
+      <Number>10</Number>
+    </ListItem>
+  </List>
+</Collection>

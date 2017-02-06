@@ -47,11 +47,17 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Controllers\AppCtrl.cs" />
+     <Compile Include="Assets\Scripts\Controllers\LevelCtrl.cs" />
      <Compile Include="Assets\Scripts\Controllers\PrefabStorageCtrl.cs" />
      <Compile Include="Assets\Scripts\Models\AppConfig.cs" />
-     <Compile Include="Assets\Scripts\Models\FieldPrefabs.cs" />
-     <Compile Include="Assets\Scripts\Models\PrefabBase.cs" />
+     <Compile Include="Assets\Scripts\Models\Cell.cs" />
+     <Compile Include="Assets\Scripts\Models\Field.cs" />
+     <Compile Include="Assets\Scripts\Models\FieldFactory.cs" />
+     <Compile Include="Assets\Scripts\PrefabsLoaders\FieldPrefabs.cs" />
+     <Compile Include="Assets\Scripts\PrefabsLoaders\PrefabBase.cs" />
+     <Compile Include="Assets\Scripts\PrefabsLoaders\XmlService.cs" />
      <Compile Include="Assets\Scripts\Utils\Logger.cs" />
+     <None Include="Assets\simpleXml.xml" />
  <Reference Include="UnityEngine.Analytics">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
